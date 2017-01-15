@@ -17,8 +17,13 @@ function FaviconsWebpackPlugin (options) {
     statsFilename: 'iconstats-[hash].json',
     persistentCache: true,
     inject: true,
-    background: '#fff'
+    background: '#fff',
+    themeColor: '#fff',
+    appDescription: '',
+    developerName: '',
+    developerURL: ''
   }, options);
+
   this.options.icons = _.extend({
     android: true,
     appleIcon: true,
@@ -35,8 +40,8 @@ function FaviconsWebpackPlugin (options) {
 
 FaviconsWebpackPlugin.prototype.apply = function (compiler) {
   var self = this;
-  if (!self.options.title) {
-    self.options.title = guessAppName(compiler.context);
+  if (!self.options.appTitle) {
+    self.options.appTitle = guessAppName(compiler.context);
   }
 
   // Generate the favicons
