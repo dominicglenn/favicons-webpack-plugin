@@ -21,7 +21,9 @@ function FaviconsWebpackPlugin (options) {
     themeColor: '#fff',
     appDescription: '',
     developerName: '',
-    developerURL: ''
+    developerURL: '',
+    startUrl: '/',
+    orientation: 'any'
   }, options);
 
   this.options.icons = _.extend({
